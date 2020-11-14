@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int i, N, A, B, C, D, y;
+    cin>>N;
+    int mas [N];
+    cin>>A>>B>>C>>D;
+    for (i=1; i<=N; i++) {
+        mas[i]=i;
+    }
+    for(i=A;i<=(A+B)/2;i++)
+    {
+         y=mas[i];
+         mas[i]=mas[B+A-i];
+         mas[B+A-i]=y;
+    }
+
+    for(i=C;i<=(C+D)/2;i++)
+     {
+        y=mas[i];
+        mas[i]=mas[D+C-i];
+        mas[D+C-i]=y;
+      }
+    for(i=1;i<=N;i++)
+       cout<<mas[i]<<" ";
+    return 0;
+}
